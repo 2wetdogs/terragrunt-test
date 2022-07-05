@@ -14,7 +14,6 @@ provider "aws" {
 module "my_s3_bucket" {
   source          = "./modules/s3"
   s3_bucket_names = var.s3_bucket_names
-
-  tags = local.tags
-
+  environment     = var.environment
+  tags            = local.tags
 }

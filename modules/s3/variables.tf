@@ -3,6 +3,10 @@ variable "s3_bucket_names" {
   default = []
 }
 
+variable "environment" {
+  type = string
+}
+
 variable "tags" {
   type = object({
     environment     = string

@@ -9,12 +9,12 @@ terraform {
 
 resource "aws_s3_bucket" "buckets" {
   count = length(var.s3_bucket_names)
-  bucket   = "${var.s3_bucket_names[count.index]}-${random_integer.random_integer.result}"
+  bucket   = "${var.s3_bucket_names[count.index]}-${var.environment}-${random_integer.random_integer.result}"
   tags = {
     env     = var.tags.environment
     app     = var.tags.application
     version = var.tags.app_version
-    Name    = "${var.s3_bucket_names[count.index]}-${random_integer.random_integer.result}"
+    Name    = "${var.s3_bucket_names[count.index]}-${var.environment}-${random_integer.random_integer.result}"
   }
 }
 

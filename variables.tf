@@ -15,7 +15,7 @@ variable "app_version" {
 }
 
 variable "s3_bucket_names" {
-  type = list
+  type        = list(any)
   description = "(optional) describe your variable"
 }
 
