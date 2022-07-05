@@ -18,9 +18,10 @@ module "my_s3_bucket" {
 
 
 ## Example 2
-Using Variables in your main terraform project.
+Using Variables in your main terraform project.  
 
-Variables in main terraform structure.
+Variables in main terraform project.
+variables.tf
 ```
 variable "application" {
   type = string
@@ -48,7 +49,9 @@ locals {
 }
 ```
 
-tfvars file in your main terraform project.
+tfvars file in your main terraform project
+
+terraform.tfvars
 ```
 environment     = "dev"
 application     = "My Super Fun App!"
@@ -57,6 +60,7 @@ s3_bucket_names = ["test1", "test2"]
 ```
 
 Passing variables to module.
+main.tf
 ```
 module "my_s3_bucket" {
   source          = "./modules/s3"
