@@ -1,3 +1,13 @@
+#  Overview
+This s3 module accepts a list of names for S3 buckets and creates secure S3 buckets with the follwing configurations:
+
+* Tags added for, env, app, version and Name.
+* Bucket versioning is enabled.
+* Bucket Server Side Encryption (SSE) is enabled using AES256
+* Bucket blocks all public access.
+* Bucket has a bucket policy only allowing TLS 1.2 or greater connections.
+
+
 # Examples on how ot use the S3 Module
 
 ## Example 1
