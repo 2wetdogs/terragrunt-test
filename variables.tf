@@ -16,7 +16,7 @@ variable "app_version" {
 
 variable "s3_bucket_names" {
   type        = list(any)
-  description = "(optional) describe your variable"
+  description = "List of S3 Bucket Names to create.  The names must be less than 56 characters as a dash \"-\" and a 5 digit random number will be added to the end of the bucket name and the bucket name can only be 63 characters."
 }
 
 locals {
