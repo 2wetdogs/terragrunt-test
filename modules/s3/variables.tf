@@ -15,6 +15,14 @@ variable "app_version" {
   type = string
 }
 
+variable "aws_profile" {
+  type = string
+}
+
+variable "aws_region" {
+  type = string
+}
+
 variable "s3_bucket_names" {
   type        = list(any)
   description = "List of S3 Bucket Names to create.  The names must be less than 50 characters as a dash \"-\" and the enviornment(5 characters or less) and a \"-\" and a 5 digit random number will be added to the end of the bucket name and the bucket name can only be 63 characters."
