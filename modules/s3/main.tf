@@ -11,9 +11,9 @@ resource "aws_s3_bucket" "buckets" {
   count = length(var.s3_bucket_names)
   bucket   = "${var.s3_bucket_names[count.index]}-${var.environment}-${random_integer.random_integer.result}"
   tags = {
-    env     = var.tags.environment
-    app     = var.tags.application
-    version = var.tags.app_version
+    env     = var.environment
+    app     = var.application
+    version = var.app_version
     Name    = "${var.s3_bucket_names[count.index]}-${var.environment}-${random_integer.random_integer.result}"
   }
 }
