@@ -7,6 +7,10 @@ terraform {
   }
 }
 
+provider "aws" {
+  region = var.aws_region
+  profile = var.aws_profile
+}
 resource "aws_s3_bucket" "buckets" {
   count = length(var.s3_bucket_names)
   bucket   = "${var.s3_bucket_names[count.index]}-${var.environment}-${random_integer.random_integer.result}"
