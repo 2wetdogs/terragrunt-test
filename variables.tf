@@ -15,6 +15,10 @@ variable "environment" {
   }
 }
 
+variable "aws_profile" {
+  type = string
+}
+
 variable "app_version" {
   type = string
 }

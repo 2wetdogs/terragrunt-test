@@ -1,4 +1,4 @@
 
 output "buckets" {
-  value = aws_s3_bucket.buckets.*.id
+  value = aws_s3_bucket.buckets
 }

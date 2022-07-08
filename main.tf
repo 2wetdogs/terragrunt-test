@@ -9,11 +9,15 @@ terraform {
 
 provider "aws" {
   region = var.aws_region
+  profile = var.aws_profile
 }
 
 module "my_s3_bucket" {
-  source          = "./modules/s3"
-  s3_bucket_names = var.s3_bucket_names
-  environment     = var.environment
-  tags            = local.tags
+    source          = "./modules/s3"
+    aws_region      = var.aws_region
+    aws_profile     = var.aws_profile
+    environment     = var.environment
+    application     = var.application
+    app_version     = var.app_version
+    s3_bucket_names = var.s3_bucket_names
 }
